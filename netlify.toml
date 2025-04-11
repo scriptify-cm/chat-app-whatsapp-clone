@@ -1,0 +1,19 @@
+[images]
+  remote_images = [
+    "https://ui-avatars.com/**",
+    "https://picsum.photos/**"
+  ]
+
+[build]
+  command = "bun run build"
+  publish = ".next"
+  environment = { NODE_VERSION = "18", NETLIFY_NEXT_PLUGIN_SKIP = "true" }
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
