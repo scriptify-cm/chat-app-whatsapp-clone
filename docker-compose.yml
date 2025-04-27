@@ -3,7 +3,7 @@ services:
     build: .
     restart: always
     ports:
-      - "3006:3000"
+      - "3009:3000"
     networks:
       - app_network
 
